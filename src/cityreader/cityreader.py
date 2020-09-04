@@ -42,7 +42,7 @@ def cityreader(cities=[]):
 
     # extracting each data row one by one 
     for city in csvreader: 
-      c = City(city[0] + ', ' + city[1], float(city[3]), float(city[4]))
+      c = City(city[0], float(city[3]), float(city[4]))
       cities.append(c) 
 
   return cities
@@ -84,20 +84,20 @@ for c in cities:
 
 # TODO Get latitude and longitude values from the user
 
-def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
-  # within will hold the cities that fall within the specified region
-  within = []
+# def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
+#   # within will hold the cities that fall within the specified region
+#   within = []
   
-  # Go through each city and check to see if it falls within 
-  # the specified coordinates.
-  within = [c for c in cities if c.lat in range(lat2, lat1+1) and c.lon in range(lon2, lon1+1)]
+#   # Go through each city and check to see if it falls within 
+#   # the specified coordinates.
+#   within = [c for c in cities if c.lat in range(lat2, lat1+1) and c.lon in range(lon2, lon1+1)]
 
 
-  return within
+#   return within
 
-i1 = input("\nEnter lat1,lon1: ")
-i2 = input("\nEnter lat2,lon2: ")
-input1 = i1.split(" ")
-input2 = i2.split(" ")
+# i1 = input("\nEnter lat1,lon1: ")
+# i2 = input("\nEnter lat2,lon2: ")
+# input1 = i1.split(" ")
+# input2 = i2.split(" ")
 
-print(cityreader_stretch(int(input1[0]), int(input1[1]), int(input2[0]), int(input2[1]), cities))
+# print(cityreader_stretch(int(input1[0]), int(input1[1]), int(input2[0]), int(input2[1]), cities))
