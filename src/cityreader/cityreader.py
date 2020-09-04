@@ -90,5 +90,14 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
   
   # Go through each city and check to see if it falls within 
   # the specified coordinates.
+  within = [c for c in cities if c.lat in range(lat2, lat1+1) and c.lon in range(lon2, lon1+1)]
+
 
   return within
+
+i1 = input("\nEnter lat1,lon1: ")
+i2 = input("\nEnter lat2,lon2: ")
+input1 = i1.split(" ")
+input2 = i2.split(" ")
+
+print(cityreader_stretch(int(input1[0]), int(input1[1]), int(input2[0]), int(input2[1]), cities))
